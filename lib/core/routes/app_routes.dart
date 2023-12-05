@@ -3,7 +3,7 @@ import 'package:trackit_app/presentation/tracking_detail_screen/tracking_detail_
 import 'package:trackit_app/presentation/login_screen/login_screen.dart';
 import 'package:trackit_app/presentation/home_screen_container_screen/home_screen_container_screen.dart';
 import 'package:trackit_app/presentation/track_screen/track_screen.dart';
-import 'package:trackit_app/presentation/app_navigation_screen/app_navigation_screen.dart';
+// import 'package:trackit_app/presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
   static const String trackingDetailScreen = '/tracking_detail_screen';

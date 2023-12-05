@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 // import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:trackit_app/service_locator.dart';
 import 'core/app_export.dart';
-import 'package:trackit_app/core/theme/theme_helper.dart';
-import 'package:trackit_app/core/routes/app_routes.dart';
+// import 'package:trackit_app/core/theme/theme_helper.dart';
+// import 'package:trackit_app/core/routes/app_routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +17,10 @@ void main() {
 
   ///Please update theme as per your need if required.
   ThemeHelper().changeTheme('primary');
-  runApp(MyApp());
+  //
+  initializeServiceLocator();
+  //
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -39,9 +44,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: [
-            Locale(
-              'en',
-            ),
+            Locale('en'),
           ],
           initialRoute: AppRoutes.loginScreen,
           routes: AppRoutes.routes,
